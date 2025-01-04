@@ -2,6 +2,8 @@
 
 ### YouTube Video - [link](https://www.youtube.com/watch?v=du8_3Jwgqng)
 
+**Note**: During the video I used Visual Studio Code and MSYS2 MinGW64 Environment but the files uploaded were compiled and built using Visual Studio 2022.
+
 ## Table of Contents
 1. [Dependencies Used](#dependencies-used)
 2. [Game Programming Patterns Used](#game-programming-patterns-used)
