@@ -13,6 +13,10 @@
 8. [Further Details on How the Prototype Works](#further-details-on-how-the-prototype-works)
 9. [Evaluation](#evaluation)
 
+## Code Snippets
+
+You can find all related code snippets in the [code snippets](./code%20snippets/) folder.
+
 ## Dependencies Used
 
 - **GL (OpenGL)**: Provides the graphics rendering pipeline used for drawing the visual elements such as the road, houses, trees, and castle in the scene.
@@ -21,16 +25,28 @@
 - **ASSIMP (Open Asset Import Library)**: Used for loading and importing 3D model files, such as the meshes for the trees, houses, and castle. It allows the conversion of various model file formats into a usable format for rendering.
 - **STB_IMAGE.h**: A header for loading image files. This was particularly useful for texture loading in the scene, such as applying textures to the ground, houses, and other objects.
 
+### Code Snippet for Dependencies
+![Dependencies](./code%20snippets/Dependencies.PNG)
+
 ## Game Programming Patterns Used
 
 - **Component-based architecture**: The project was designed to separate the rendering logic from the game objects themselves. For instance, each object like the house, trees, and castle could have components for their meshes, textures, and transformations.
 - **Event-driven programming**: The camera controls were set up as event handlers where input from the user (via the keyboard) triggers specific actions like moving or rotating the camera.
+
+### Code Snippet for Program Structure
+![Structure](./code%20snippets/CodeStructure.PNG)
 
 ## Game Mechanics and How They Are Coded
 
 - **Camera Control**: The user can move the camera using the **W**, **A**, **S**, and **D** keys for forward, left, back, and right movement, respectively. The **Q** and **E** keys allow for camera rotation.
 - **Scene Composition**: The scene consists of several objects, including a dirt road, grass, two houses, a wheat field, trees, and a castle. The castle and the houses are placed using 3D models loaded from external files.
 - **Fog Effect**: A fog effect was added to create a mystical atmosphere for the medieval setting, which is implemented using OpenGL shaders.
+
+### Code Snippet for Camera Control
+![Dependencies](./code%20snippets/Camera.PNG)
+
+### Snippet of Assets used in the Scene
+![Dependencies](./code%20snippets/Assets.PNG)
 
 ## Software Engineering Issues
 
@@ -46,6 +62,15 @@ _No UML diagram was provided, but one could be created to show how different com
 1. **Scene Overview**: A shot of the full scene showing the dirt road leading to the castle.
 2. **Close-up of House**: A close-up rendering showing the house and surrounding trees.
 3. **Fog Effect**: A screenshot illustrating how the fog enhances the atmosphere in the scene.
+
+### Snippet for Scene Overview
+![Dependencies](./code%20snippets/SceneOverview.PNG)
+
+### Snippet for Close-up of House
+![Dependencies](./code%20snippets/House.PNG)
+
+### Snippet for Fog Effect
+![Dependencies](./code%20snippets/Fog.PNG)
 
 ## Exception Handling and Test Cases
 
