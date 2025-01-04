@@ -35,4 +35,4 @@ Before you can build and run the project, ensure you have the following installe
 
 4. **Build the Project in VS**
 
-After installing the required libraries using vcpkg, you are ready to build the project and run it.
+After installing the required libraries using vcpkg, you are ready to build the project and run it. You don't have to install the stb_image.h since the header should already be in the source code.
