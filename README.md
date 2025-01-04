@@ -7,7 +7,7 @@
 2. [Game Programming Patterns Used](#game-programming-patterns-used)
 3. [Game Mechanics and How They Are Coded](#game-mechanics-and-how-they-are-coded)
 4. [Software Engineering Issues](#software-engineering-issues)
-5. [UML Design Diagram](#uml-design-diagram)
+5. [Code Structure](#code-structure)
 6. [Sample Screens](#sample-screens)
 7. [Exception Handling and Test Cases](#exception-handling-and-test-cases)
 8. [Further Details on How the Prototype Works](#further-details-on-how-the-prototype-works)
@@ -33,9 +33,6 @@ You can find all related code snippets in the [code snippets](./code%20snippets/
 - **Component-based architecture**: The project was designed to separate the rendering logic from the game objects themselves. For instance, each object like the house, trees, and castle could have components for their meshes, textures, and transformations.
 - **Event-driven programming**: The camera controls were set up as event handlers where input from the user (via the keyboard) triggers specific actions like moving or rotating the camera.
 
-### Code Snippet for Program Structure
-![Structure](./code%20snippets/CodeStructure.PNG)
-
 ## Game Mechanics and How They Are Coded
 
 - **Camera Control**: The user can move the camera using the **W**, **A**, **S**, and **D** keys for forward, left, back, and right movement, respectively. The **Q** and **E** keys allow for camera rotation.
@@ -53,9 +50,59 @@ You can find all related code snippets in the [code snippets](./code%20snippets/
 - **Performance vs. Good Practice**: A key issue was the trade-off between performance and clarity in the code. For example, individual trees were rendered separately, which could have been optimized through batching. However, rendering each tree separately allowed for easier debugging during development.
 - **Texture Optimization**: The textures used might not be the best fit for the scene's aesthetic. In future versions, more appropriate textures could be chosen to enhance the visual quality and match the medieval theme better.
   
-## UML Design Diagram
+## Code Structure
 
-_No UML diagram was provided, but one could be created to show how different components like meshes, textures, camera, and objects (houses, trees, etc.) interact with each other._
+Since my project uses a single class (`Mesh`) and a single struct (`Vertex`), I did not produce any UML diagrams. Instead, here is an outline of the current code structure and its components:
+
+### 1. Dependencies
+The project relies on the following dependencies:
+- **GLFW**: Used for creating the window and handling user input.
+- **GLAD**: Used for managing OpenGL function pointers.
+- **GLM**: Used for mathematical operations, such as matrix transformations.
+- **ASSIMP**: Used for loading 3D models, including the house and castle.
+- **STB_IMAGE.h**: Used for loading textures (e.g., tree textures and the cubemap).
+
+### 2. Vertex Struct and Mesh Class
+- **Vertex Struct**: Represents the properties of a vertex, such as:
+  - Position
+  - Normals
+  - Texture coordinates
+- **Mesh Class**: Manages the data and rendering logic for meshes.
+  - `loadModel()`: Loads a 3D model from a file using ASSIMP.
+  - `processNode()`: Recursively processes nodes in the model hierarchy to extract meshes.
+  - `processMesh()`: Converts raw mesh data into OpenGL-compatible data structures.
+
+### 3. Camera Controls
+- **Camera Settings**: Configures the camera's position, orientation, and movement speed.
+- **Camera Update Function**: Updates the view matrix based on the camera's current position and orientation.
+- **Process Input**: Handles user input for camera controls, such as:
+  - `WASD` for movement.
+  - `QE` for rotation.
+
+### 4. Texture Loading
+- **`loadTexture()` Function**: Loads textures from file paths.
+- **Load Tree Texture**: Specifically applies textures to the tree models.
+- **Load Cubemap**: Loads the six images required for the skybox.
+
+### 5. Shader Management
+- **Shaders**: Includes vertex and fragment shaders for rendering.
+- **Create Shader Program**: Links individual shaders into a complete program used for rendering.
+
+### 6. Scene Components
+- **Vertices for Road, Grass, etc.**: Hardcoded vertex data used to create static elements in the scene.
+- **Framebuffer**: Used for post-processing effects, such as applying fog.
+
+### 7. Utility Functions
+- **`renderTree()` Function**: Reduces redundancy by encapsulating tree rendering logic into a reusable function.
+
+### 8. Main Function
+- **Render Loop**: The core game loop, responsible for:
+  - Updating the scene.
+  - Rendering all elements.
+  - Processing user input.
+
+### Code Snippet for Program Structure
+![Structure](./code%20snippets/CodeStructure.PNG)
 
 ## Sample Screens
 
