@@ -1,6 +1,4 @@
-# COMP3016-CW2
-
-# OpenGL Project Report
+# COMP3016-CW2 Report
 
 ## Table of Contents
 1. [Dependencies Used](#dependencies-used)
