@@ -1,6 +1,6 @@
 # COMP3016-CW2 Report
 
-### YouTube Video - link
+### YouTube Video - [link](https://www.youtube.com/watch?v=du8_3Jwgqng)
 
 ## Table of Contents
 1. [Dependencies Used](#dependencies-used)
