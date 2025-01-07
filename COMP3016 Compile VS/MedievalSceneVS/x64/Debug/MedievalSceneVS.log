@@ -1,0 +1,5 @@
+﻿  MedievalSceneVS.cpp
+C:\Users\jeffj\Downloads\COMP3016 CW2 Submission\COMP3016 Compile VS\MedievalSceneVS\MedievalSceneVS.cpp(38,50): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\jeffj\Downloads\COMP3016 CW2 Submission\COMP3016 Compile VS\MedievalSceneVS\MedievalSceneVS.cpp(673,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  MedievalSceneVS.vcxproj -> C:\Users\jeffj\Downloads\COMP3016 CW2 Submission\COMP3016 Compile VS\x64\Debug\MedievalSceneVS.exe
